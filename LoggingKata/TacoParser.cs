@@ -29,9 +29,9 @@ namespace LoggingKata
 
             // grab the latitude from your array at index 0
             double latitude = 0;
-            double longitutde = 0;
+            double longitude = 1;
             var testLat = double.TryParse(cells[0], out latitude);
-            var testLong = double.TryParse(cells[1], out longitutde);
+            var testLong = double.TryParse(cells[1], out longitude);
             var name = cells[2];
 
             // grab the longitude from your array at index 
@@ -40,7 +40,7 @@ namespace LoggingKata
             TacoBell tacobell = new TacoBell();
             tacobell.Name = name;
             Point num1 = new Point();
-            num1.Longitude = longitutde;
+            num1.Longitude = longitude;
             num1.Latitude = latitude;
 
             // Your going to need to parse your string as a `double`
