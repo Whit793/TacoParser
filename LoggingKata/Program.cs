@@ -46,32 +46,33 @@ namespace LoggingKata
             //HINT NESTED LOOPS SECTION---------------------
             // Do a loop for your locations to grab each location as the origin (perhaps: `locA`)
             double distanceBetween = 0;
-            double LongestDistance = 0;
+            double longestDistance = 0;
 
             foreach (var locA in locations)
             {
                 GeoCoordinate pinA = new GeoCoordinate();
-                pinA.Longitude = locA.Location.Longitude;
                 pinA.Latitude = locA.Location.Latitude;
+                pinA.Longitude = locA.Location.Longitude;
 
 
                 foreach (var locB in locations)
                 {
                     
                     GeoCoordinate pinB = new GeoCoordinate();
-                    pinB.Longitude = locB.Location.Longitude;
                     pinB.Latitude = locB.Location.Latitude;
+                    pinB.Longitude = locB.Location.Longitude;
                     distanceBetween = pinA.GetDistanceTo(pinB);
-                    if (distanceBetween > LongestDistance )
+                    if (distanceBetween > longestDistance )
                     {
-                        LongestDistance = distanceBetween;
+                        longestDistance = distanceBetween;
                         tacobell1 = locA;
                         tacobell2 = locB;
                     }
                     
                 }
             }
-            Console.WriteLine($"The longest distance is {LongestDistance}");
+            Console.Clear();
+            Console.WriteLine($"The longest distance is {longestDistance}");
             Console.WriteLine($"The two taco bells are:");
             Console.WriteLine($"{tacobell1.Name}");
             Console.WriteLine($"{tacobell2.Name}");
